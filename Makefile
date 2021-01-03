@@ -45,28 +45,28 @@ $(OBJ)/imagenES.o: $(SRC)/imagenES.cpp $(INC)/imagenES.h
 $(BIN)/pruebaimagen: $(OBJ)/pruebaimagen.o $(LIB)/libImagen.a
 	$(CXX) -o $@ $< $(libImagen)
 
-$(OBJ)/pruebaimagen.o: $(SRC)/pruebaimagen.cpp $(IncludesIImagen)
+$(OBJ)/pruebaimagen.o: $(SRC)/pruebaimagen.cpp $(IncludesImagen)
 	$(CXX) $(CPPFLAGS) -o $@ $<
 
 # ********* modificarmascara ********** #
 $(BIN)/modificarmascara: $(OBJ)/modificarmascara.o $(LIB)/libImagen.a
 	$(CXX) -o $@ $< $(libImagen)
 
-$(OBJ)/modificarmascara.o: $(SRC)/modificarmascara.cpp $(IncludesIImagen)
+$(OBJ)/modificarmascara.o: $(SRC)/modificarmascara.cpp $(IncludesImagen)
 	$(CXX) $(CPPFLAGS) -o $@ $<
 
 # ********* pruebapegado ********* #
 $(BIN)/pruebapegado: $(OBJ)/pruebapegado.o $(LIB)/libImagen.a
 	$(CXX) -o $@ $< $(libImagen)
 	
-$(OBJ)/pruebapegado.o: $(SRC)/pruebapegado.cpp $(IncludesIImagen)
+$(OBJ)/pruebapegado.o: $(SRC)/pruebapegado.cpp $(IncludesImagen)
 	$(CXX) $(CPPFLAGS) -o $@ $<
 
 # ********* pruebarotacion ********* #
 $(BIN)/pruebarotacion: $(OBJ)/pruebarotacion.o $(LIB)/libImagen.a
 	$(CXX) -o $@ $< $(libImagen)
 
-$(OBJ)/pruebarotacion.o: $(SRC)/pruebarotacion.cpp $(IncludesIImagen)
+$(OBJ)/pruebarotacion.o: $(SRC)/pruebarotacion.cpp $(IncludesImagen)
 	$(CXX) $(CPPFLAGS) -o $@ $<
 
 # ********* rutas_aereas ********** #

@@ -1,3 +1,5 @@
+#ifndef __ALMACEN_RUTAS_H
+#define __ALMACEN_RUTAS_H
 #include <map>
 #include "Ruta.h"
 #include <iostream>
@@ -21,3 +23,5 @@ class Almacen_Rutas {
 
 ostream& operator<<(ostream& out, const Almacen_Rutas& almacen);
 istream& operator>>(istream& in, Almacen_Rutas& almacen);
+
+#endif

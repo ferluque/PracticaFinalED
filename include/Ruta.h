@@ -33,6 +33,8 @@ public:
         iterator &operator--();
         bool operator!=(const iterator &otro);
         Punto &operator*();
+
+        friend class Ruta;
     };
 
     iterator begin();
@@ -53,6 +55,8 @@ public:
         const_iterator &operator--();
         bool operator!=(const const_iterator &otro);
         const Punto &operator*();
+
+        friend class Ruta;
     };
 
     const_iterator cbegin();

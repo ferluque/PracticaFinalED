@@ -23,7 +23,7 @@ ostream& operator<<(ostream& out, const Ruta& ruta) {
 }
 
 // ITERATOR
-Ruta::iterator(list<Punto>::iterator lit) : it(lit) {}
+Ruta::iterator::iterator(list<Punto>::iterator lit) : it(lit) {}
 
 Ruta::iterator& Ruta::iterator::operator++() {
     ++it;
@@ -54,9 +54,9 @@ Punto& Ruta::iterator::operator*() {
 }
 
 // CONST_ITERATOR
-Ruta::const_iterator(list<Punto>::const_iterator clit) : cit(clit) {}
+Ruta::const_iterator::const_iterator(list<Punto>::const_iterator clit) : cit(clit) {}
 
-Ruta::const_iterator& Ruta::const_iterator::operator++(); {
+Ruta::const_iterator& Ruta::const_iterator::operator++() {
     ++cit;
     return *this;
 }

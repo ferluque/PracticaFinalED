@@ -1,3 +1,6 @@
+#ifndef __PUNTO_H
+#define __PUNTO_H
+
 #include <iostream>
 
 struct Punto
@@ -44,3 +47,5 @@ std::ostream &operator<<(std::ostream &out, const Punto &p)
     out << "(" << p.x << "," << p.y << ")";
     return out;
 }
+
+#endif
