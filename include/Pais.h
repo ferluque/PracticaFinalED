@@ -6,14 +6,17 @@ class Pais
 {
 private:
     Punto p;
-    string pais;
-    string bandera;
+    std::string pais;
+    std::string bandera;
 
 public:
     Pais() {}
     Punto GetPunto() const { return p; }
-    string GetPais() const { return pais; }
-    string GetBandera() const { return bandera; }
+    std::string GetPais() const { return pais; }
+    std::string GetBandera() const { return bandera; }
+
+    double GetLongitud () const { return p.x;}
+    double GetLatitud () const {return p.y;}
 
     bool operator<(const Pais &P) const
     {
@@ -27,18 +30,18 @@ public:
     {
         return p == P;
     }
-    friend istream &operator>>(istream &is, Pais &P)
+    friend std::istream &operator>>(std::istream &is, Pais &P)
     {
         double lat, lng;
 
         is >> lat >> lng >> P.pais >> P.bandera;
 
-        P.p = Punto(lat, lng, "");
+        P.p = Punto(lat, lng);
         return is;
     }
-    friend ostream &operator<<(ostream &os, const Pais &P)
+    friend std::ostream &operator<<(std::ostream &os, const Pais &P)
     {
-        os << P.p << " " << P.pais << " " << P.bandera << endl;
+        os << P.p << " " << P.pais << " " << P.bandera << std::endl;
         return os;
     }
 };
