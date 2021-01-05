@@ -112,6 +112,8 @@ void Pintar(int f1, int f2, int c1, int c2, Imagen &I, const Imagen &avion, int 
   }
 }
 
+
+
 int main(int argc, char *argv[])
 {
   if (argc != 7)
@@ -128,8 +130,9 @@ int main(int argc, char *argv[])
   }
   Paises Pses;
   ifstream f(argv[1]);
+  cout << "Introduce países" << endl;
   f >> Pses;
-  //cout<<Pses;
+  cout << Pses;
   Imagen I;
   I.LeerImagen(argv[2]);
 

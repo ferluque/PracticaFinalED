@@ -36,7 +36,7 @@ public:
 
         is >> lat >> lng >> P.pais >> P.bandera;
 
-        P.p = Punto(lat, lng);
+        P.p = Punto(lng, lat);
         return is;
     }
     friend std::ostream &operator<<(std::ostream &os, const Pais &P)

@@ -4,18 +4,20 @@ using namespace std;
 istream& operator>>(istream& in, Ruta& ruta) {
     int num_puntos;
     in >> num_puntos; 
+    in.ignore();
 
     for (int i=0; i<num_puntos; i++) {
         Punto nuevo;
         in >> nuevo;
         ruta.puntos.push_back(nuevo);
+        in.ignore();
     }
     return in;
 }
 
 ostream& operator<<(ostream& out, const Ruta& ruta) {
     out << ruta.puntos.size() << " ";
-    for (list<Punto>::const_iterator it = ruta.puntos.begin(); it != ruta.puntos.end(); ++it) {
+    for (Ruta::const_iterator it = ruta.cbegin(); it != ruta.cend(); ++it) {
         out << (*it) << " ";
     }
     out << endl;
@@ -74,12 +76,12 @@ const Punto& Ruta::const_iterator::operator*() {
     return (*cit);
 }
 
-Ruta::const_iterator Ruta::cbegin() {
+Ruta::const_iterator Ruta::cbegin() const {
     const_iterator begin(puntos.cbegin());
     return begin;
 }
 
-Ruta::const_iterator Ruta::cend() {
+Ruta::const_iterator Ruta::cend() const {
     const_iterator end(puntos.cend());
     return end;
 }

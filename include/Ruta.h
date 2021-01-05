@@ -59,8 +59,8 @@ public:
         friend class Ruta;
     };
 
-    const_iterator cbegin();
-    const_iterator cend();
+    const_iterator cbegin() const;
+    const_iterator cend() const;
 };
 
 istream &operator>>(istream &in, Ruta &ruta);

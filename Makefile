@@ -15,7 +15,7 @@ ObjetosRutas = $(OBJ)/Punto.o $(OBJ)/Pais.o $(OBJ)/Paises.o $(OBJ)/Ruta.o $(OBJ)
 $(LIB)/libRutas.a: $(ObjetosRutas)
 	ar rvs $@ $^
 # ********* Punto ********** #
-$(OBJ)/Punto.o: $(INC)/Punto.h
+$(OBJ)/Punto.o: $(SRC)/Punto.cpp $(INC)/Punto.h
 	$(CXX) $(CPPFLAGS) -o $@ $<
 # ********* Pais ********** #
 $(OBJ)/Pais.o: $(INC)/Pais.h $(INC)/Punto.h
@@ -69,12 +69,23 @@ $(BIN)/pruebarotacion: $(OBJ)/pruebarotacion.o $(LIB)/libImagen.a
 $(OBJ)/pruebarotacion.o: $(SRC)/pruebarotacion.cpp $(IncludesImagen)
 	$(CXX) $(CPPFLAGS) -o $@ $<
 
+# ********* pruebapunto *********** #
+$(BIN)/pruebapunto: $(OBJ)/pruebapunto.o $(OBJ)/Punto.o
+	$(CXX) -o $@ $^
+
+$(OBJ)/pruebapunto.o: $(SRC)/pruebapunto.cpp $(INC)/Punto.h
+	$(CXX) $(CPPFLAGS) -o $@ $<
+
 # ********* rutas_aereas ********** #
 $(BIN)/rutasaereas: $(OBJ)/rutas_aereas.o $(LIB)/libImagen.a $(LIB)/libRutas.a
 	$(CXX) -o $@ $< $(libImagen) $(libRutas)
 
 $(OBJ)/rutas_aereas.o: $(SRC)/rutas_aereas.cpp $(IncludesImagen) $(IncludesRutas)
 	$(CXX) $(CPPFLAGS) -o $@ $<
+
+# ********** ejecuta *********** #
+ejecuta: $(BIN)/rutasaereas
+	$< datos/paises.txt datos/imagenes/mapas/mapa1.ppm datos/imagenes/banderas/ datos/almacen_rutas.txt datos/imagenes/aviones/avion1.ppm datos/imagenes/aviones/mascara_avion1.pgm
 
 # ************ Generación de documentación ******************
 documentacion:

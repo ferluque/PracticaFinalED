@@ -167,7 +167,7 @@ void Imagen::LimpiarTransp()
 /*********************************/
 void Imagen::PutImagen(int posi, int posj, const Imagen &I, Tipo_Pegado tippegado)
 {
-  //assert(nf>=posi+I.nf && nc>=posj+I.nc);
+  assert(nf>=posi+I.nf && nc>=posj+I.nc);
 
   for (int i = 0; i < I.nf; i++)
     for (int j = 0; j < I.nc; j++)
